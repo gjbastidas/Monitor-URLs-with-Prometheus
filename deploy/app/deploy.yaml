@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitor-urls
+  namespace: apps
+  labels:
+    app: monitor-urls
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: monitor-urls
+  template:
+    metadata:
+      labels:
+        app: monitor-urls
+    spec:
+      containers:
+      - name: monitor-urls
+        image: monitor-url-prometheus
+        imagePullPolicy: IfNotPresent
+        command: ["./app"]
+        ports:
+          - name: web
+            containerPort: 8080
+        resources:
+          limits:
+           cpu: 100m
+           memory: 64Mi
+          requests:
+           cpu: 50m
+           memory: 32Mi

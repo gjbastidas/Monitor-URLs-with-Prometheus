@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: monitor-urls
+  namespace: apps
+  labels:
+    monitor: apps-monitor
+spec:
+  selector:
+    matchLabels:
+      app: monitor-urls
+  endpoints:
+  - port: web

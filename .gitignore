@@ -1,0 +1,2 @@
+# Temp folder where Kube-Prometheus manifests are stored
+tmp/
