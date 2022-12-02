@@ -8,7 +8,7 @@ and finally shows those metrics in Grafana.
 - Kubernetes Deployment specification for **Prometheus** is found in [deploy](deploy/prometheus/) folder.
 - Custom Grafana dashboard is found in [grafana](grafana/) folder.
 
-## Pre-Requisites
+## Prerequisites
 
 Code has been tested with the following tools:
 
